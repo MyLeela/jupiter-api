@@ -3,9 +3,9 @@ package daos
 import (
 	"testing"
 
-	"github.com/qiangxue/golang-restful-starter-kit/app"
-	"github.com/qiangxue/golang-restful-starter-kit/models"
-	"github.com/qiangxue/golang-restful-starter-kit/testdata"
+	"github.com/MyLeela/jupiter-api/app"
+	"github.com/MyLeela/jupiter-api/models"
+	"github.com/MyLeela/jupiter-api/testdata"
 	"github.com/stretchr/testify/assert"
 )
 

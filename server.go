@@ -4,6 +4,11 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/MyLeela/jupiter-api/apis"
+	"github.com/MyLeela/jupiter-api/app"
+	"github.com/MyLeela/jupiter-api/daos"
+	"github.com/MyLeela/jupiter-api/errors"
+	"github.com/MyLeela/jupiter-api/services"
 	"github.com/Sirupsen/logrus"
 	"github.com/go-ozzo/ozzo-dbx"
 	"github.com/go-ozzo/ozzo-routing"
@@ -11,11 +16,6 @@ import (
 	"github.com/go-ozzo/ozzo-routing/content"
 	"github.com/go-ozzo/ozzo-routing/cors"
 	_ "github.com/lib/pq"
-	"github.com/qiangxue/golang-restful-starter-kit/apis"
-	"github.com/qiangxue/golang-restful-starter-kit/app"
-	"github.com/qiangxue/golang-restful-starter-kit/daos"
-	"github.com/qiangxue/golang-restful-starter-kit/errors"
-	"github.com/qiangxue/golang-restful-starter-kit/services"
 )
 
 func main() {
@@ -52,7 +52,7 @@ func buildRouter(logger *logrus.Logger, db *dbx.DB) *routing.Router {
 	router := routing.New()
 
 	router.To("GET,HEAD", "/ping", func(c *routing.Context) error {
-		c.Abort()  // skip all other middlewares/handlers
+		c.Abort() // skip all other middlewares/handlers
 		return c.Write("OK " + app.Version)
 	})
 
